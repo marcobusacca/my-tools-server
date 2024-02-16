@@ -32,7 +32,6 @@ public class Task {
 
     public Task(String title, TaskCategory taskCategory) {
         setTitle(title);
-        setDone(false);
         setTaskCategory(taskCategory);
     }
 
