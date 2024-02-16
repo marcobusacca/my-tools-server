@@ -7,6 +7,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 
 @Entity
 public class Task {
@@ -23,12 +24,16 @@ public class Task {
 
     private boolean done;
 
+    @ManyToOne
+    private TaskCategory taskCategory;
+
     public Task() {
     }
 
-    public Task(String title) {
+    public Task(String title, TaskCategory taskCategory) {
         setTitle(title);
         setDone(false);
+        setTaskCategory(taskCategory);
     }
 
     public int getId() {
@@ -69,6 +74,14 @@ public class Task {
 
     public void setDone(boolean done) {
         this.done = done;
+    }
+
+    public TaskCategory getTaskCategory() {
+        return this.taskCategory;
+    }
+
+    private void setTaskCategory(TaskCategory taskCategory) {
+        this.taskCategory = taskCategory;
     }
 
     @Override

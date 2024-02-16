@@ -1,9 +1,14 @@
 package it.mytools.spring.db.pojo;
 
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class TaskCategory {
@@ -13,6 +18,10 @@ public class TaskCategory {
     private int id;
 
     private String title;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "taskCategory")
+    private List<Task> tasks;
 
     public TaskCategory() {
     }
@@ -35,6 +44,14 @@ public class TaskCategory {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public List<Task> getTasks() {
+        return this.tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
     }
 
     @Override

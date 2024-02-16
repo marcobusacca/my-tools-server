@@ -20,12 +20,12 @@ public class MyToolsServerApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		Task t1 = new Task("task-1");
-		Task t2 = new Task("task-2");
-		taskService.save(t1);
-		taskService.save(t2);
-		System.out.println(t1);
-		System.out.println(t2);
+		// Task t1 = new Task("task-1");
+		// Task t2 = new Task("task-2");
+		// taskService.save(t1);
+		// taskService.save(t2);
+		// System.out.println(t1);
+		// System.out.println(t2);
 	}
 
 }
