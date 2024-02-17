@@ -35,6 +35,7 @@ public class MyToolsServerApplication implements CommandLineRunner {
 
 		Task t1 = new Task("task-1", tc1);
 		Task t2 = new Task("task-2", tc2);
+		t1.setDone(true);
 		taskService.save(t1);
 		taskService.save(t2);
 		System.out.println(t1);
