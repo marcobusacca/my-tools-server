@@ -79,7 +79,7 @@ public class Task {
         return this.taskCategory;
     }
 
-    private void setTaskCategory(TaskCategory taskCategory) {
+    public void setTaskCategory(TaskCategory taskCategory) {
         this.taskCategory = taskCategory;
     }
 
