@@ -29,7 +29,7 @@ public class TaskRestController {
         return new ResponseEntity<>(tasks, HttpStatus.OK);
     }
 
-    @PostMapping("{id}")
+    @PostMapping("/done/{id}")
     public ResponseEntity<String> setTaskDone(@PathVariable int id) {
 
         Task task = taskService.findById(id);
