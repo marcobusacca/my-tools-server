@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -28,6 +29,20 @@ public class TaskRestController {
         List<Task> tasks = taskService.findAll();
 
         return new ResponseEntity<>(tasks, HttpStatus.OK);
+    }
+
+    @PostMapping
+    public ResponseEntity<String> storeTask(@RequestBody Task taskForm) {
+
+        Task task = new Task(taskForm.getTitle(), taskForm.getTaskCategory());
+
+        task.setDate(taskForm.getDate());
+        task.setTime(taskForm.getTime());
+        task.setDone(taskForm.isDone());
+
+        taskService.save(task);
+
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PutMapping("{id}")
