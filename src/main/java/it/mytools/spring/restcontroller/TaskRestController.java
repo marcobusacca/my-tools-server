@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -69,6 +70,16 @@ public class TaskRestController {
         task.setDone(!task.isDone());
 
         taskService.save(task);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
+    @DeleteMapping("{id}")
+    public ResponseEntity<String> deleteTask(@PathVariable int id) {
+
+        Task task = taskService.findById(id);
+
+        taskService.delete(task);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
