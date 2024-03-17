@@ -23,10 +23,16 @@ public class TaskCategoryService {
     }
 
     public void save(TaskCategory taskCategory) {
+        if (taskCategory == null) {
+            return;
+        }
         taskCategoryRepository.save(taskCategory);
     }
 
     public void delete(TaskCategory taskCategory) {
+        if (taskCategory == null) {
+            return;
+        }
         taskCategoryRepository.delete(taskCategory);
     }
 }

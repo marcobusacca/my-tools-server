@@ -22,11 +22,21 @@ public class TaskService {
         return taskRepository.findById(id).get();
     }
 
+    public List<Task> findByTaskCategoryId(int taskCategoryId) {
+        return taskRepository.findByTaskCategoryId(taskCategoryId);
+    }
+
     public void save(Task task) {
+        if (task == null) {
+            return;
+        }
         taskRepository.save(task);
     }
 
     public void delete(Task task) {
+        if (task == null) {
+            return;
+        }
         taskRepository.delete(task);
     }
 }
