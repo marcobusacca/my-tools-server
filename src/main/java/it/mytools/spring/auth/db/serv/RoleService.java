@@ -26,10 +26,18 @@ public class RoleService {
 
     public void save(Role role) {
 
+        if (role == null) {
+            return;
+        }
+
         roleRepository.save(role);
     }
 
     public void delete(Role role) {
+
+        if (role == null) {
+            return;
+        }
 
         roleRepository.delete(role);
     }

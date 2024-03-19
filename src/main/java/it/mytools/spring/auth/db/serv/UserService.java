@@ -29,10 +29,18 @@ public class UserService implements UserDetailsService {
 
     public void save(User user) {
 
+        if (user == null) {
+            return;
+        }
+
         userRepository.save(user);
     }
 
     public void delete(User user) {
+
+        if (user == null) {
+            return;
+        }
 
         userRepository.delete(user);
     }
