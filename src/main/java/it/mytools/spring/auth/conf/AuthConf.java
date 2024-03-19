@@ -54,6 +54,7 @@ public class AuthConf {
         return authProvider;
     }
 
+    @SuppressWarnings("null")
     @Bean
     FilterRegistrationBean<CorsFilter> getCorsSettings() {
 
