@@ -28,6 +28,9 @@ public class Wallet {
     @Min(0)
     private double balance;
 
+    @Column(nullable = false)
+    private boolean active = true;
+
     @JsonIgnore
     @OneToMany(mappedBy = "wallet")
     private List<Expense> expenses;
@@ -62,6 +65,14 @@ public class Wallet {
 
     public void setBalance(double balance) {
         this.balance = balance;
+    }
+
+    public boolean isActive() {
+        return this.active;
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public List<Expense> getExpenses() {
