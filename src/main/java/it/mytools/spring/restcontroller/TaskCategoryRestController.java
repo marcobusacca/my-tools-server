@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import it.mytools.spring.db.pojo.TaskCategory;
-import it.mytools.spring.db.serv.TaskCategoryService;
-import it.mytools.spring.db.pojo.Task;
-import it.mytools.spring.db.serv.TaskService;
+import it.mytools.spring.db.pojo.todolist.Task;
+import it.mytools.spring.db.pojo.todolist.TaskCategory;
+import it.mytools.spring.db.serv.todolist.TaskCategoryService;
+import it.mytools.spring.db.serv.todolist.TaskService;
 
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;

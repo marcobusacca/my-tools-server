@@ -1,4 +1,4 @@
-package it.mytools.spring.db.pojo;
+package it.mytools.spring.db.pojo.todolist;
 
 import java.time.LocalDate;
 import java.time.LocalTime;

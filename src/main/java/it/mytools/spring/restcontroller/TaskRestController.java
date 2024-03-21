@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import it.mytools.spring.db.pojo.Task;
-import it.mytools.spring.db.serv.TaskService;
+import it.mytools.spring.db.pojo.todolist.Task;
+import it.mytools.spring.db.serv.todolist.TaskService;
 
 @RestController
 @RequestMapping("/api/tasks")

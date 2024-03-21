@@ -1,12 +1,12 @@
-package it.mytools.spring.db.serv;
+package it.mytools.spring.db.serv.todolist;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import it.mytools.spring.db.pojo.TaskCategory;
-import it.mytools.spring.db.repo.TaskCategoryRepository;
+import it.mytools.spring.db.pojo.todolist.TaskCategory;
+import it.mytools.spring.db.repo.todolist.TaskCategoryRepository;
 
 @Service
 public class TaskCategoryService {
