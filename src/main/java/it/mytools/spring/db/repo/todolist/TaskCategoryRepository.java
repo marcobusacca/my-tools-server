@@ -7,5 +7,4 @@ import it.mytools.spring.db.pojo.todolist.TaskCategory;
 
 @Repository
 public interface TaskCategoryRepository extends JpaRepository<TaskCategory, Integer> {
-
 }

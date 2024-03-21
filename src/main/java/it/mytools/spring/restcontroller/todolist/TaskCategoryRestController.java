@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @RestController
-@RequestMapping("/api/tasks/categories")
+@RequestMapping("/api/todolist/categories")
 public class TaskCategoryRestController {
 
     @Autowired

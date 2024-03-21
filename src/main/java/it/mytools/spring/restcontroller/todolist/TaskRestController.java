@@ -18,7 +18,7 @@ import it.mytools.spring.db.pojo.todolist.Task;
 import it.mytools.spring.db.serv.todolist.TaskService;
 
 @RestController
-@RequestMapping("/api/tasks")
+@RequestMapping("/api/todolist/tasks")
 public class TaskRestController {
 
     @Autowired

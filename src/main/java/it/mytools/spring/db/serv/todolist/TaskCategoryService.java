@@ -19,7 +19,7 @@ public class TaskCategoryService {
     }
 
     public TaskCategory findById(int id) {
-        return taskCategoryRepository.findById(id).get();
+        return taskCategoryRepository.findById(id).orElse(null);
     }
 
     public void save(TaskCategory taskCategory) {

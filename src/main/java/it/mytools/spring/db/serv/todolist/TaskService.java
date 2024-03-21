@@ -19,7 +19,7 @@ public class TaskService {
     }
 
     public Task findById(int id) {
-        return taskRepository.findById(id).get();
+        return taskRepository.findById(id).orElse(null);
     }
 
     public List<Task> findByTaskCategoryId(int taskCategoryId) {

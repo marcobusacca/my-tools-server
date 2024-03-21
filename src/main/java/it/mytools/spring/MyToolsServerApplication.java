@@ -7,8 +7,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import it.mytools.spring.db.pojo.todolist.Task;
 import it.mytools.spring.db.pojo.todolist.TaskCategory;
+import it.mytools.spring.db.pojo.tracker.Wallet;
 import it.mytools.spring.db.serv.todolist.TaskCategoryService;
 import it.mytools.spring.db.serv.todolist.TaskService;
+import it.mytools.spring.db.serv.tracker.ExpenseService;
+import it.mytools.spring.db.serv.tracker.WalletService;
 
 @SpringBootApplication
 public class MyToolsServerApplication implements CommandLineRunner {
@@ -18,6 +21,12 @@ public class MyToolsServerApplication implements CommandLineRunner {
 
 	@Autowired
 	private TaskService taskService;
+
+	@Autowired
+	private WalletService walletService;
+
+	@Autowired
+	private ExpenseService expenseService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(MyToolsServerApplication.class, args);
@@ -39,6 +48,9 @@ public class MyToolsServerApplication implements CommandLineRunner {
 		taskService.save(t2);
 		System.out.println(t1);
 		System.out.println(t2);
+
+		// Wallet wallet1 = new Wallet("contanti", 0);
+		// walletService.save(wallet1);
 	}
 
 }
