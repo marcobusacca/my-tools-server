@@ -1,4 +1,4 @@
-package it.mytools.spring.restcontroller;
+package it.mytools.spring.restcontroller.todolist;
 
 import java.util.List;
 
