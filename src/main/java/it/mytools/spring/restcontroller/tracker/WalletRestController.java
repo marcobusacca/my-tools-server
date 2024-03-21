@@ -29,7 +29,7 @@ public class WalletRestController {
         return new ResponseEntity<>(wallets, HttpStatus.OK);
     }
 
-    @PutMapping("/done/{id}")
+    @PutMapping("/active/{id}")
     public ResponseEntity<String> toggleWalletActive(@PathVariable int id) {
         Wallet wallet = walletService.findById(id);
 
