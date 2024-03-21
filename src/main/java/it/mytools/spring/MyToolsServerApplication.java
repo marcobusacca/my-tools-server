@@ -49,7 +49,10 @@ public class MyToolsServerApplication implements CommandLineRunner {
 		taskService.save(t2);
 
 		Wallet wallet1 = new Wallet("contanti", 0);
+		Wallet wallet2 = new Wallet("cassaforte", 100);
+		wallet2.setActive(false);
 		walletService.save(wallet1);
+		walletService.save(wallet2);
 
 		Expense expense1 = new Expense(LocalDate.now(), "ho speso troppi soldi", wallet1, 1000);
 		expenseService.save(expense1);

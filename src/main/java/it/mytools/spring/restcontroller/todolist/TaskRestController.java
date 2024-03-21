@@ -63,7 +63,7 @@ public class TaskRestController {
     }
 
     @PutMapping("/done/{id}")
-    public ResponseEntity<String> setTaskDone(@PathVariable int id) {
+    public ResponseEntity<String> toggleTaskDone(@PathVariable int id) {
 
         Task task = taskService.findById(id);
 
