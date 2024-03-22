@@ -44,6 +44,22 @@ public class WalletRestController {
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
+    @PutMapping("{id}")
+    public ResponseEntity<String> updateWallet(@PathVariable int id, @RequestBody Wallet walletForm) {
+
+        Wallet wallet = walletService.findById(id);
+
+        String walletName = walletForm.getName();
+        double walletBalance = walletForm.getBalance();
+
+        wallet.setName(walletName);
+        wallet.setBalance(walletBalance);
+
+        walletService.save(wallet);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
+
     @PutMapping("/active/{id}")
     public ResponseEntity<String> toggleWalletActive(@PathVariable int id) {
         Wallet wallet = walletService.findById(id);
